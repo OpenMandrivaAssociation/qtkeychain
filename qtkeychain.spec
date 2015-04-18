@@ -41,7 +41,7 @@ Requires:	%{name}-common
 Platform-independent Qt API for storing passwords securely.
 
 %files -n %{libname}
-%{_libdir}/libqtkeychain.so.%{major}*
+%{_libdir}/libqt5keychain.so.%{major}*
 
 #----------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ This package contains the header files and .so libraries for developing
 %files -n %{devname}
 %{_includedir}/*
 %{_libdir}/*.so
-%{_libdir}/cmake/QtKeychain
+%{_libdir}/cmake/Qt5Keychain
 
 #----------------------------------------------------------------------------
 
