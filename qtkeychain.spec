@@ -4,8 +4,8 @@
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
-Version:	0.6.0
-Release:	2
+Version:	0.6.2
+Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 Url:		https://github.com/frankosterfeld/qtkeychain
@@ -24,6 +24,7 @@ Platform-independent Qt API for storing passwords securely.
 %package common
 Summary:	Common files for %{name} (translations etc)
 Group:		System/Libraries
+Requires:	%{libname} = %{EVRD}
 
 %description common
 Common files for %{name} (translations etc).
