@@ -1,10 +1,10 @@
-%define major 0
+%define major 1
 %define libname %mklibname %name %{major}
 %define devname %mklibname %name -d
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
-Version:	0.6.2
+Version:	0.7.0
 Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
@@ -43,6 +43,7 @@ Platform-independent Qt API for storing passwords securely.
 
 %files -n %{libname}
 %{_libdir}/libqt5keychain.so.%{major}*
+%{_libdir}/libqt5keychain.so.%{version}
 
 #----------------------------------------------------------------------------
 
