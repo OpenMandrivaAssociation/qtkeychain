@@ -4,12 +4,12 @@
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
-Version:	0.7.0
+Version:	0.8.0
 Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 Url:		https://github.com/frankosterfeld/qtkeychain
-Source0:	%{name}-%{version}.tar.gz
+Source0:	https://github.com/frankosterfeld/qtkeychain/archive/v%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
@@ -62,6 +62,7 @@ This package contains the header files and .so libraries for developing
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/Qt5Keychain
+%{_prefix}/mkspecs/modules/*
 
 #----------------------------------------------------------------------------
 
