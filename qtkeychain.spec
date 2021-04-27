@@ -1,11 +1,11 @@
 %define major 1
-%define libname %mklibname %name %{major}
-%define devname %mklibname %name -d
+%define libname %mklibname %{name} %{major}
+%define devname %mklibname %{name} -d
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
 Version:	0.12.0
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 Url:		https://github.com/frankosterfeld/qtkeychain
@@ -15,6 +15,7 @@ BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	pkgconfig(libsecret-1)
 
 %description
 Platform-independent Qt API for storing passwords securely.
