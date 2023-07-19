@@ -85,15 +85,15 @@ This package contains the header files and .so libraries for developing
 #----------------------------------------------------------------------------
 
 %if %{with qt6}
-%package %{libqt6name}
+%package -n %{libqt6name}
 Summary:        %{summary}
 Requires:	%{name}-common
 
-%description %{libqt6name}
+%description -n %{libqt6name}
 The qt6keychain library allows you to store passwords easily and securely.
  
  
-%package %{devqt6name}
+%package -n %{devqt6name}
 Summary:        Development files for %{name}-qt6
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6LinguistTools)
@@ -103,17 +103,17 @@ Requires:       cmake(Qt6Core)
 # *probably* overlinking and can be pruned, but requires closer inspection
 Requires:       pkgconfig(libsecret-1)
  
-%description %{devqt6name}
+%description -n %{devqt6name}
 This package contains development files for qt6keychain.
 %endif
 
 %if %{with qt6}
-%files %{libqt6name}
+%files -n %{libqt6name}
 %license COPYING
 %{_libdir}/libqt6keychain.so.1
 %{_libdir}/libqt6keychain.so.0*
  
-%files %{devqt6name}
+%files -n %{devqt6name}
 %{_includedir}/qt6keychain/
 %{_libdir}/cmake/Qt6Keychain/
 %{_libdir}/libqt6keychain.so
