@@ -4,8 +4,8 @@
 %define major 1
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
-%define libqt6name Qt6 %mklibname
-%define devqt6name Qt6 %mklibname -d
+%define libqt6name %mklibname Qt6keychain
+%define devqt6name %mklibname Qt6keychain -d
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
