@@ -25,7 +25,13 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 %endif
 BuildRequires:	pkgconfig(libsecret-1)
-
+%if %{with qt6}
+BuildRequires:	cmake(Qt6)
+BuildRequires:	qmake-qt6
+BuildRequires:  cmake(Qt6Core)
+BuildRequires:  cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6DBus)
+%endif
 %description
 Platform-independent Qt API for storing passwords securely.
 
