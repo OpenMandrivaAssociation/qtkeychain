@@ -138,7 +138,7 @@ cd ..
 %endif
 
 %install
-%make_install -C build-qt5
+%make_install -C build
 
 %make_install -C build-qt6
 
