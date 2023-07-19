@@ -4,6 +4,8 @@
 %define major 1
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
+%define libqt6name %mklibname %{name}Qt6
+%define devqt6name %mklibname %{name}Qt6 -d
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
@@ -41,7 +43,6 @@ Platform-independent Qt API for storing passwords securely.
 %package common
 Summary:	Common files for %{name} (translations etc)
 Group:		System/Libraries
-Requires:	%{libname} = %{EVRD}
 
 %description common
 Common files for %{name} (translations etc).
@@ -84,34 +85,35 @@ This package contains the header files and .so libraries for developing
 #----------------------------------------------------------------------------
 
 %if %{with qt6}
-%package qt6
+%package %{libqt6name}
 Summary:        %{summary}
- 
-%description qt6
+Requires:	%{name}-common
+
+%description %{libqt6name}
 The qt6keychain library allows you to store passwords easily and securely.
  
  
-%package qt6-devel
+%package %{devqt6name}
 Summary:        Development files for %{name}-qt6
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6LinguistTools)
-Requires:       %{name}-qt6%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:       qt6-qtbase-devel%{?_isa}
+Requires:       %{libqt6name} = %{EVRD}
+Requires:       cmake(Qt6Core)
 # deps referenced in Qt6KeychainLibraryDepends-relwithdebinfo.cmake:  IMPORTED_LINK_INTERFACE_LIBRARIES_RELWITHDEBINFO "Qt6::Core;secret-1;gio-2.0;gobject-2.0;glib-2.0;Qt6::DBus"
 # *probably* overlinking and can be pruned, but requires closer inspection
 Requires:       pkgconfig(libsecret-1)
  
-%description qt6-devel
+%description %{devqt6name}
 This package contains development files for qt6keychain.
 %endif
 
 %if %{with qt6}
-%files qt6
+%files %{libqt6name}
 %license COPYING
 %{_libdir}/libqt6keychain.so.1
 %{_libdir}/libqt6keychain.so.0*
  
-%files qt6-devel
+%files %{devqt6name}
 %{_includedir}/qt6keychain/
 %{_libdir}/cmake/Qt6Keychain/
 %{_libdir}/libqt6keychain.so
