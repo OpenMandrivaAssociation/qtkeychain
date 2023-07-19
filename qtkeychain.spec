@@ -125,7 +125,7 @@ cd ..
 	
 %if %{with qt6}
 export CMAKE_BUILD_DIR=build-qt6
-%cmake_qt6 \
+%cmake \
   -DBUILD_WITH_QT6:BOOL=ON
 %make_build
 cd ..
