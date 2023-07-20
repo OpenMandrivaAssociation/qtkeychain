@@ -17,7 +17,7 @@ Url:		https://github.com/frankosterfeld/qtkeychain
 Source0:	https://github.com/frankosterfeld/qtkeychain/archive/v%{version}/%{name}-%{version}.tar.gz
 	
 # Fix qt6 detection broken by including ECMGeneratePriFile
-Patch0:         qtkeychain-qt6.patch
+#Patch0:         qtkeychain-qt6.patch
 
 BuildRequires:	cmake
 %if %{with qt5}
