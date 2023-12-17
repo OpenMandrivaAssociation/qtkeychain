@@ -9,7 +9,7 @@
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
-Version:	0.14.1
+Version:	0.14.2
 Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
