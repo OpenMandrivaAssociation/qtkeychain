@@ -9,12 +9,12 @@
 
 Summary:	Platform-independent Qt API for storing passwords securely
 Name:		qtkeychain
-Version:	0.15.0
+Version:	0.16.0
 Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 Url:		https://github.com/frankosterfeld/qtkeychain
-Source0:	https://github.com/frankosterfeld/qtkeychain/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/%{version}.tar.gz
 	
 # Fix qt6 detection broken by including ECMGeneratePriFile
 #Patch0:         qtkeychain-qt6.patch
@@ -119,6 +119,7 @@ This package contains development files for qt6keychain.
 %{_includedir}/qt6keychain/
 %{_libdir}/cmake/Qt6Keychain/
 %{_libdir}/libqt6keychain.so
+%{_qtdir}/mkspecs/modules/*.pri
 %endif
 #---------------------------------------------------------------------------- 
 
